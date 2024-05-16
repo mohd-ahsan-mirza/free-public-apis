@@ -17,6 +17,8 @@ export class APIService {
             console.log(`API service is running on port ${this.port}`);
 
             if (process.env['EXCHANGE_RATE_API_HOST']) {
+
+                //https://www.frankfurter.app/docs/
                 const exchangeRate = new ExchangeRateService(process.env['EXCHANGE_RATE_API_HOST'])
 
                 const latestCadExchangeRate = await exchangeRate.getExchangeRate('CAD')
